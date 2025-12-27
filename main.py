@@ -6,7 +6,7 @@ os.environ["CREWAI_DISABLE_TELEMETRY"] = "true"
 import warnings
 import streamlit as st
 from crewai import Agent, Task, Crew
-from langchain_community.llms.ollama import Ollama
+from langchain_openai import OpenAI  # Updated import for OpenRouter
 from serpapi import GoogleSearch
 import subprocess
 
@@ -14,8 +14,12 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 # --- ENV SETUP ---
 SERPAPI_API_KEY = os.getenv("SERPAPI_API_KEY")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")  # New env var for OpenRouter
 if not SERPAPI_API_KEY:
     st.error("SERPAPI_API_KEY is not set. Please export it as an environment variable.")
+    st.stop()
+if not OPENROUTER_API_KEY:
+    st.error("OPENROUTER_API_KEY is not set. Please export it as an environment variable.")
     st.stop()
 
 # --- UTILITIES ---
@@ -47,9 +51,10 @@ def save_text_to_md(text, filename):
     st.write(f"-> Output saved to Markdown: {filename}")
 
 # --- LLM SETUP ---
-llm = Ollama(
-    model="ollama/mistral",
-    base_url="http://localhost:11434"
+llm = OpenAI(
+    model="mistralai/mistral-7b-instruct",  # OpenRouter model (matches original "mistral"; change if needed)
+    api_key=OPENROUTER_API_KEY,
+    base_url="https://openrouter.ai/api/v1"
 )
 
 # --- STREAMLIT UI ---
