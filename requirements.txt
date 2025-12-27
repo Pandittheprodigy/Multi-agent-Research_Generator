@@ -4,3 +4,4 @@ Streamlit
 langchain-community 
 Serpapi
 google-search-results
+Litellm
