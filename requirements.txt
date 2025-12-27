@@ -3,3 +3,4 @@ groq
 Streamlit
 langchain-community 
 serpapi
+google-search-results
