@@ -5,3 +5,4 @@ langchain-community
 Serpapi
 google-search-results
 Litellm
+langchain-openai
