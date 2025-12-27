@@ -52,7 +52,7 @@ def save_text_to_md(text, filename):
 
 # --- LLM SETUP ---
 llm = OpenAI(
-    model="mistralai/mistral-7b-instruct",  # OpenRouter model (matches original "mistral"; change if needed)
+    model="openrouter/mistralai/mistral-7b-instruct",  # OpenRouter model (matches original "mistral"; change if needed)
     api_key=OPENROUTER_API_KEY,
     base_url="https://openrouter.ai/api/v1"
 )
