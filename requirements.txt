@@ -2,5 +2,5 @@ crewai
 groq
 Streamlit
 langchain-community 
-serpapi
+Serpapi
 google-search-results
