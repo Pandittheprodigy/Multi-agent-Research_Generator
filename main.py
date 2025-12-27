@@ -1,13 +1,14 @@
 import os
+
+# Disable CrewAI telemetry BEFORE importing crewai to avoid signal handler errors
+os.environ["CREWAI_DISABLE_TELEMETRY"] = "true"
+
 import warnings
 import streamlit as st
 from crewai import Agent, Task, Crew
 from langchain_community.llms.ollama import Ollama
 from serpapi import GoogleSearch
 import subprocess
-
-# Disable CrewAI telemetry to avoid signal handler errors in non-main threads
-os.environ["CREWAI_DISABLE_TELEMETRY"] = "true"
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
