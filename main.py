@@ -4,6 +4,9 @@ from crewai import Agent, Task, Crew
 from langchain_community.llms.ollama import Ollama
 from serpapi import GoogleSearch
 
+# Disable CrewAI telemetry to avoid signal handler errors in non-main threads
+os.environ["CREWAI_DISABLE_TELEMETRY"] = "true"
+
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 # --- ENV SETUP ---
