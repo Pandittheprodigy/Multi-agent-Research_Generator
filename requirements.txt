@@ -10,3 +10,4 @@ langchain-openai
 fastapi
 apscheduler
 pydantic
+email-validator
