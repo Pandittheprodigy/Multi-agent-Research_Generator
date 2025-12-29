@@ -7,5 +7,5 @@ google-search-results
 Litellm
 langchain-openai
 fastapi
-'litellm[proxy]'
-'crewai[tools]'
+litellm[proxy]
+crewai[tools]
