@@ -8,3 +8,4 @@ google-search-results
 Litellm
 langchain-openai
 fastapi
+apscheduler
