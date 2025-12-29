@@ -9,3 +9,4 @@ Litellm
 langchain-openai
 fastapi
 apscheduler
+pydantic
