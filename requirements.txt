@@ -8,3 +8,4 @@ Litellm
 langchain-openai
 fastapi
 'litellm[proxy]'
+'crewai[tools]'
